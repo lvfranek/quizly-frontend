@@ -3,6 +3,7 @@ import { Layout } from './components/Layout'
 import { LibraryPage } from './pages/LibraryPage'
 import { LoginPage } from './pages/LoginPage'
 import { QuizDetailPage } from './pages/QuizDetailPage'
+import { QuizPlayPage } from './pages/QuizPlayPage'
 import { RegisterPage } from './pages/RegisterPage'
 import { ToastProvider } from './toast/ToastProvider'
 
@@ -18,6 +19,7 @@ function App() {
           <Route element={<Layout loggedIn />}>
             <Route path="/library" element={<LibraryPage />} />
             <Route path="/quiz/:id" element={<QuizDetailPage />} />
+            <Route path="/quiz/:id/play" element={<QuizPlayPage />} />
           </Route>
           <Route path="*" element={<Navigate to="/library" replace />} />
         </Routes>
