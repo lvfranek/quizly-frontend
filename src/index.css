@@ -101,6 +101,11 @@ textarea {
   font-weight: 500;
 }
 
+.btn-ghost.btn-large {
+  height: 46px;
+  padding: 0 20px;
+}
+
 .btn-ghost:hover:not(:disabled) {
   border-color: var(--text-muted);
 }
