@@ -1,0 +1,60 @@
+import styles from './Legal.module.css'
+
+export function LegalNoticePage() {
+  return (
+    <article className={styles.page}>
+      <h1>Impressum</h1>
+
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>
+        Franciszek Kaminski
+        <br />
+        Eppenhainerstraße 19
+        <br />
+        28307 Bremen
+        <br />
+        Deutschland
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a href="mailto:franek.kaminski@gmx.de">franek.kaminski@gmx.de</a>
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>Franciszek Kaminski, Anschrift wie oben.</p>
+
+      <h2>Über dieses Projekt</h2>
+      <p>
+        Quizly ist ein nicht-kommerzielles Portfolio-Projekt. Entwickelt im Rahmen des
+        Weiterbildungsprogramms der Developer Akademie GmbH. Es dient nur zu Lern- und
+        Bewerbungszwecken.
+      </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Als Diensteanbieter bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen
+        Gesetzen verantwortlich. Die Quizfragen werden automatisch von einer KI erzeugt. Für ihre
+        Richtigkeit und Vollständigkeit übernehme ich keine Gewähr.
+      </p>
+
+      <h2>Haftung für Links</h2>
+      <p>
+        Diese Website enthält Links und eingebettete Videos von YouTube. Auf deren Inhalte habe ich
+        keinen Einfluss und kann dafür keine Gewähr übernehmen.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die von mir erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+        Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
+      </p>
+
+      <h2>Verbraucherstreitbeilegung</h2>
+      <p>
+        Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
+        Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+    </article>
+  )
+}
