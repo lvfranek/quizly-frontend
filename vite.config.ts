@@ -1,7 +1,9 @@
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// Port 5500 on 127.0.0.1, because the local backend allows CORS only from there
 export default defineConfig({
   plugins: [react()],
+  server: { host: '127.0.0.1', port: 5500, strictPort: true },
+  preview: { host: '127.0.0.1', port: 5500, strictPort: true },
 })

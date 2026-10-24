@@ -1,24 +1,26 @@
-import styles from './App.module.css'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { LibraryPage } from './pages/LibraryPage'
+import { LoginPage } from './pages/LoginPage'
+import { RegisterPage } from './pages/RegisterPage'
+import { ToastProvider } from './toast/ToastProvider'
 
 function App() {
   return (
-    <>
-      <header className={styles.header}>
-        <span className={styles.logo}>
-          quizly<em>.</em>
-        </span>
-      </header>
-
-      <main className={styles.main}>
-        <h1>Video rein. Quiz raus.</h1>
-        <p className={styles.lead}>Füge einen YouTube-Link ein. Die KI schreibt 10 Fragen.</p>
-      </main>
-
-      <footer className={styles.footer}>
-        <span>Impressum / Datenschutz</span>
-        <span>Entwickelt im Rahmen des Weiterbildungsprogramms der Developer Akademie GmbH.</span>
-      </footer>
-    </>
+    <BrowserRouter>
+      <ToastProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Route>
+          <Route element={<Layout loggedIn />}>
+            <Route path="/library" element={<LibraryPage />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/library" replace />} />
+        </Routes>
+      </ToastProvider>
+    </BrowserRouter>
   )
 }
 
