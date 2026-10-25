@@ -6,7 +6,7 @@
 Web app for **Quizly**, which turns YouTube videos into quizzes. Paste a YouTube link and the backend's AI writes 10 multiple-choice questions about the video. You can play the quiz, review your answers, rename and delete quizzes.
 
 **Live demo:** [quizly.franekkaminski.dev](https://quizly.franekkaminski.dev)
-Demo login: `testuser` / `Testpasswort123!`
+Demo login: `testuser` / `Testpasswort123!` (reset to sample quizzes on every login, max. 3 new quizzes per day)
 
 ## Table of Contents
 

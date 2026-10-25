@@ -11,6 +11,9 @@ const EXPECTED_SECONDS = 30
 function getCreateErrorMessage(error: unknown) {
   if (!(error instanceof ApiError)) return 'Keine Verbindung zum Server.'
   if (error.status === 400) return 'Der Link ist ungültig oder das Video konnte nicht geladen werden.'
+  if (error.status === 429) {
+    return 'Mit dem Test-Account kannst du höchstens 3 Quizze pro Tag erstellen. Registriere dich kostenlos, um mehr zu erstellen.'
+  }
   return 'Die KI konnte gerade kein Quiz erstellen. Bitte versuch es noch einmal.'
 }
 
