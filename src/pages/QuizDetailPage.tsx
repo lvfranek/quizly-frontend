@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getQuiz, updateQuiz, type Quiz } from '../api/quizzes'
 import { formatRelativeDay } from '../lib/format'
@@ -26,6 +26,15 @@ export function QuizDetailPage() {
   const [draft, setDraft] = useState<Draft>({ title: '', description: '' })
   const [status, setStatus] = useState<SaveStatus>('idle')
   const edited = useRef(false)
+  const titleRef = useRef<HTMLTextAreaElement>(null)
+
+  // The title wraps onto several lines, so the field grows with its text
+  useLayoutEffect(() => {
+    const field = titleRef.current
+    if (!field) return
+    field.style.height = 'auto'
+    field.style.height = `${field.scrollHeight}px`
+  }, [draft.title, quiz])
 
   useEffect(() => {
     edited.current = false
@@ -92,11 +101,13 @@ export function QuizDetailPage() {
           <label htmlFor="title" className={styles.label}>
             Titel
           </label>
-          <input
+          <textarea
             id="title"
+            ref={titleRef}
+            rows={1}
             className={styles.title}
             value={draft.title}
-            onChange={(event) => handleChange('title', event.target.value)}
+            onChange={(event) => handleChange('title', event.target.value.replace(/\n/g, ' '))}
             aria-invalid={status === 'empty'}
           />
 

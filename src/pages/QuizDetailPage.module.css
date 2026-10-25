@@ -42,8 +42,8 @@
   width: 100%;
   margin-bottom: 20px;
   padding: 10px 12px;
-  background: transparent;
-  border: 1px solid transparent;
+  background: rgb(255 255 255 / 0.02);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius);
   outline: none;
   transition:
@@ -51,10 +51,9 @@
     background 0.15s;
 }
 
-/* Looks like plain text until hovered or focused */
 .title:hover,
 .description:hover {
-  border-color: var(--border);
+  border-color: var(--text-muted);
 }
 
 .title:focus,
@@ -68,16 +67,16 @@
 }
 
 .title {
-  margin-left: -12px;
-  width: calc(100% + 12px);
+  display: block;
+  overflow: hidden;
+  resize: none;
   font-size: clamp(24px, 3.4vw, 34px);
   font-weight: 700;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 .description {
-  margin-left: -12px;
-  width: calc(100% + 12px);
   resize: vertical;
   color: var(--text-muted);
   line-height: 1.6;
