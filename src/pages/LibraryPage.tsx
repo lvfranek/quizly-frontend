@@ -119,9 +119,19 @@ export function LibraryPage() {
                 <div className={styles.progress}>
                   <span style={{ width: `${Math.min(elapsed / EXPECTED_SECONDS, 0.95) * 100}%` }} />
                 </div>
-                <small>
-                  {formatSeconds(elapsed)} / ~{formatSeconds(EXPECTED_SECONDS)}
-                </small>
+                {elapsed > EXPECTED_SECONDS ? (
+                  <>
+                    <p className={styles.slowHint}>
+                      Das dauert gerade etwas länger als sonst. Manchmal braucht die KI ein paar
+                      Sekunden mehr, gleich ist es fertig.
+                    </p>
+                    <small>{formatSeconds(elapsed)}</small>
+                  </>
+                ) : (
+                  <small>
+                    {formatSeconds(elapsed)} / ~{formatSeconds(EXPECTED_SECONDS)}
+                  </small>
+                )}
               </div>
             )}
 
