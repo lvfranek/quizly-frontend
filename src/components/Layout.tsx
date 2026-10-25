@@ -2,6 +2,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { logout } from '../api/auth'
 import { useToast } from '../toast/ToastContext'
 import styles from './Layout.module.css'
+import { RobotLogo } from './RobotLogo'
 
 /** Page frame with header and footer. `loggedIn` shows the logout button. */
 export function Layout({ loggedIn = false }: { loggedIn?: boolean }) {
@@ -21,8 +22,11 @@ export function Layout({ loggedIn = false }: { loggedIn?: boolean }) {
   return (
     <>
       <header className={styles.header}>
-        <Link to={loggedIn ? '/library' : '/login'} className={styles.logo}>
-          quizly<em>.</em>
+        <Link to={loggedIn ? '/library' : '/'} className={styles.logo}>
+          <RobotLogo size={30} />
+          <span>
+            quizly<em>.</em>
+          </span>
         </Link>
         {loggedIn && (
           <button type="button" className="btn btn-ghost" onClick={handleLogout}>
@@ -40,7 +44,6 @@ export function Layout({ loggedIn = false }: { loggedIn?: boolean }) {
           <Link to="/legal-notice">Impressum</Link>
           <Link to="/privacy">Datenschutz</Link>
         </nav>
-        <span>Entwickelt im Rahmen des Weiterbildungsprogramms der Developer Akademie GmbH.</span>
       </footer>
     </>
   )

@@ -31,11 +31,12 @@ Demo login: `testuser` / `Testpasswort123!`
 
 ## Features
 
+- Animated intro page with the Quizly robot
 - Register, log in and log out with client-side validation and server field errors
 - Create a quiz from a YouTube link, with a live progress card while the AI works (about 20 to 30 seconds)
 - Quiz library with skeleton loading, empty state and delete
 - Quiz detail page with inline editing of title and description (autosave) and the embedded video
-- Quiz player with progress bar, back/next navigation and keyboard shortcuts (`1` to `4`, `Enter`)
+- Quiz player with progress bar and back/next navigation
 - Result screen with score and a review of all answers, optionally with the correct solutions
 - Legal notice and privacy policy
 - Responsive layout down to phone width, visible focus states, reduced-motion support
@@ -80,7 +81,7 @@ Create a `.env.local` to override the value on your machine.
 ```
 src/
 ├── api/           # fetch wrapper with token refresh, auth and quiz endpoints
-├── components/    # Layout (header/footer) and form Field
+├── components/    # Layout (header/footer), form Field, RobotLogo
 ├── lib/           # validation, date formatting, YouTube helpers
 ├── pages/         # one component + CSS module per route
 ├── toast/         # toast notifications (context + provider)
@@ -91,6 +92,7 @@ src/
 
 | Route | Page |
 | --- | --- |
+| `/` | Intro page |
 | `/login`, `/register` | Authentication |
 | `/library` | Create quizzes and list all quizzes |
 | `/quiz/:id` | Quiz details, editing and video |

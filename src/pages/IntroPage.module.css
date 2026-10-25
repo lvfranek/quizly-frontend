@@ -1,0 +1,68 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding-top: 24px;
+}
+
+.bubble {
+  position: relative;
+  width: min(420px, 100%);
+  min-height: 92px;
+  margin: 0;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  font-size: 20px;
+  line-height: 1.4;
+  transition: opacity 0.3s;
+}
+
+/* Tail of the speech bubble, pointing down to the robot */
+.bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: var(--surface);
+  border-right: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.bubble[data-visible='false'] {
+  opacity: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  transition:
+    opacity 0.4s,
+    transform 0.4s;
+}
+
+.actions a {
+  text-decoration: none;
+}
+
+.actions[data-visible='false'] {
+  opacity: 0;
+  transform: translateY(8px);
+  visibility: hidden;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

@@ -10,7 +10,7 @@ export function PrivacyPage() {
       <p>
         Franciszek Kaminski, Eppenhainerstraße 19, 28307 Bremen, Deutschland
         <br />
-        E-Mail: <a href="mailto:franek.kaminski@gmx.de">franek.kaminski@gmx.de</a>
+        E-Mail: <a href="mailto:info@franekkaminski.dev">info@franekkaminski.dev</a>
         <br />
         Weitere Angaben findest du im <Link to="/legal-notice">Impressum</Link>.
       </p>

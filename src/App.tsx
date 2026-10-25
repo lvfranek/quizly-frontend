@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
+import { IntroPage } from './pages/IntroPage'
 import { LegalNoticePage } from './pages/LegalNoticePage'
 import { LibraryPage } from './pages/LibraryPage'
 import { LoginPage } from './pages/LoginPage'
@@ -15,6 +16,7 @@ function App() {
       <ToastProvider>
         <Routes>
           <Route element={<Layout />}>
+            <Route path="/" element={<IntroPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/legal-notice" element={<LegalNoticePage />} />
@@ -25,7 +27,7 @@ function App() {
             <Route path="/quiz/:id" element={<QuizDetailPage />} />
             <Route path="/quiz/:id/play" element={<QuizPlayPage />} />
           </Route>
-          <Route path="*" element={<Navigate to="/library" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </ToastProvider>
     </BrowserRouter>

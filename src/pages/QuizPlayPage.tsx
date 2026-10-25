@@ -53,19 +53,6 @@ export function QuizPlayPage() {
     setPhase('question')
   }
 
-  // Keys 1-4 pick an answer, Enter goes to the next question
-  useEffect(() => {
-    if (phase !== 'question' || !question) return
-    function handleKey(event: KeyboardEvent) {
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return
-      const option = question.question_options[Number(event.key) - 1]
-      if (option) select(option)
-      if (event.key === 'Enter' && !(event.target instanceof HTMLButtonElement)) goNext()
-    }
-    window.addEventListener('keydown', handleKey)
-    return () => window.removeEventListener('keydown', handleKey)
-  })
-
   if (notFound) {
     return (
       <section className={styles.center}>
@@ -204,7 +191,6 @@ export function QuizPlayPage() {
         <button type="button" className="btn btn-ghost btn-large" onClick={goBack} disabled={index === 0}>
           Zurück
         </button>
-        <span className={styles.hint}>Tasten 1 bis 4 zum Antworten</span>
         <button type="button" className="btn btn-primary" onClick={goNext} disabled={!selected}>
           {isLast ? 'Auswerten' : 'Weiter'}
         </button>

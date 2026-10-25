@@ -18,7 +18,7 @@ export function LegalNoticePage() {
 
       <h2>Kontakt</h2>
       <p>
-        E-Mail: <a href="mailto:franek.kaminski@gmx.de">franek.kaminski@gmx.de</a>
+        E-Mail: <a href="mailto:info@franekkaminski.dev">info@franekkaminski.dev</a>
       </p>
 
       <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
@@ -26,8 +26,7 @@ export function LegalNoticePage() {
 
       <h2>Über dieses Projekt</h2>
       <p>
-        Quizly ist ein nicht-kommerzielles Portfolio-Projekt. Entwickelt im Rahmen des
-        Weiterbildungsprogramms der Developer Akademie GmbH. Es dient nur zu Lern- und
+        Quizly ist ein nicht-kommerzielles Portfolio-Projekt. Es dient nur zu Lern- und
         Bewerbungszwecken.
       </p>
 

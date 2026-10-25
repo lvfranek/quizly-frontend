@@ -7,7 +7,6 @@
 
 .meta,
 .top,
-.hint,
 .optionLabel,
 .mark {
   font-family: var(--font-mono);
@@ -108,10 +107,6 @@
   align-items: center;
   gap: 12px;
   margin-top: 28px;
-}
-
-.hint {
-  color: var(--text-muted);
 }
 
 /* Result */
@@ -281,9 +276,5 @@
     min-height: 0;
     flex-direction: row;
     align-items: baseline;
-  }
-
-  .hint {
-    display: none;
   }
 }

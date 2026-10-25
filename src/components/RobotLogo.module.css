@@ -1,0 +1,39 @@
+.robot {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.winkEye {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animated {
+    animation: pop-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animated .winkEye {
+    animation: wink 0.9s ease-in-out 0.6s 2;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(12px);
+  }
+}
+
+@keyframes wink {
+  0%,
+  35%,
+  65%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.1);
+  }
+}
