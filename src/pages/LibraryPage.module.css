@@ -204,12 +204,34 @@
   }
 }
 
+/* Phone: input and button become two separate blocks */
 @media (max-width: 520px) {
   .create {
     flex-direction: column;
+    gap: 10px;
+    background: none;
+    border: 0;
+    overflow: visible;
+  }
+
+  .create input {
+    flex: none;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    transition: border-color 0.15s;
+  }
+
+  .create input:focus {
+    border-color: var(--accent);
+  }
+
+  .create input[aria-invalid='true'] {
+    border-color: var(--danger);
   }
 
   .create :global(.btn) {
     width: 100%;
+    border-radius: var(--radius);
   }
 }
